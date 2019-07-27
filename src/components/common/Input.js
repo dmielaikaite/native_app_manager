@@ -2,9 +2,9 @@ import React from 'react';
 import { View, TextInput, Text } from 'react-native';
 
 const Input = (props) => {
-  const { inputStyle, labelStyle, textContainerStyel} = styles;
+  const { inputStyle, labelStyle, textContainerStyle } = styles;
   return (
-    <View style={textContainerStyel}>
+    <View style={textContainerStyle}>
       <Text style={labelStyle}>{props.label}</Text>
       <TextInput
         placeholder={props.placeholder}
@@ -32,12 +32,12 @@ const styles = {
     paddingLeft: 20,
     flex: 1
   },
-  textContainerStyel: {
+  textContainerStyle: {
     height: 40,
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center'
   }
-}
+};
 
 export { Input };
