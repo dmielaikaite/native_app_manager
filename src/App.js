@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
 import { Provider } from 'react-redux';
+import firebase from 'firebase';
 import { createStore } from 'redux';
 import reducers from './reducers';
-import firebase from 'firebase';
+import LoginForm from './components/LoginForm';
 
 class App extends Component {
-
-  componentWillMount(){
+  componentWillMount() {
     firebase.initializeApp({
       apiKey: 'AIzaSyBrG0l5j1howupuob7UjWV8sgCWyUIpFwk',
       authDomain: 'manager-b653c.firebaseapp.com',
@@ -15,17 +14,13 @@ class App extends Component {
       projectId: 'manager-b653c',
       storageBucket: 'manager-b653c.appspot.com',
       messagingSenderId: '533078284314',
-    })
+    });
   }
 
   render() {
     return (
       <Provider store={createStore(reducers)}>
-        <View>
-          <Text>
-            Hey
-          </Text>
-        </View>
+       <LoginForm > </LoginForm>
       </Provider>
     );
   }
