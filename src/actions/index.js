@@ -1,4 +1,6 @@
 import firebase from 'firebase';
+import { Actions } from 'react-native-router-flux';
+
 import {
   EMAIL_CHANGE,
   PASSWORD_CHANGE,
@@ -40,6 +42,7 @@ import {
      type: LOGIN_USER_SUCCESS,
      payload: user
    });
+   Actions.main();
  };
 
  const loginUserFail = (dispatch) => {
