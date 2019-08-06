@@ -5,7 +5,6 @@ import { Card, Input, Button, CardSection } from './common';
 import { employeeUpdate, employeeCreate } from '../actions';
 
 class EmployeeCreate extends Component {
-
   onButtonPress() {
     const { name, phone, shift } = this.props;
     this.props.employeeCreate({ name, phone, shift: shift || 'Monday' });
@@ -20,7 +19,7 @@ class EmployeeCreate extends Component {
             label="Name"
             placeholder="Jane"
             value={this.props.name}
-            onChangeText={(text) => { this.props.employeeUpdate({ key: 'name', value: text }) }}
+            onChangeText={(text) => { this.props.employeeUpdate({ key: 'name', value: text }); }}
           />
         </CardSection>
 
@@ -29,7 +28,7 @@ class EmployeeCreate extends Component {
             label="Phone"
             placeholder="3333"
             value={this.props.phone}
-            onChangeText={(text) => { this.props.employeeUpdate({ key: 'phone', value: text }) }}
+            onChangeText={(text) => { this.props.employeeUpdate({ key: 'phone', value: text }); }}
           />
         </CardSection>
 
